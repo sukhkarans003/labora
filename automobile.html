@@ -716,6 +716,23 @@ document.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('cl
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t){var y=t.getBoundingClientRect().top+window.scrollY-72;window.scrollTo({top:y,behavior:'smooth'})}})});
 window.addEventListener('scroll',function(){handleReveal();animateCounters();animateBars();handleNav()},{passive:true});
 handleReveal();animateCounters();animateBars();
+    document.onkeydown = function(e) {
+    if (e.keyCode == 123) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+    }
+};
+        document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
 </script>
 
 </body>
